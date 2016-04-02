@@ -1,6 +1,4 @@
 ignore 'REAMDME.md'
-ignore 'stylesheets/*'
-ignore 'javascripts/*'
 
 activate :external_pipeline,
   name: :gulp,
@@ -24,6 +22,8 @@ configure :development do
 end
 
 configure :build do
+  ignore 'stylesheets/*'
+  ignore 'javascripts/*'
   after_build do
     system('gulp build')
   end
