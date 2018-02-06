@@ -23,16 +23,18 @@ Other dependencies are look at Gemfile and package.json.
 $ mkdir YOUR_SITE_NAME && cd $_
 $ gem i middleman -v 4.2.1
 $ middleman init -T t4traw/static_site_bootstrap
+$ mv gitignore .gitignore
+$ yarn install
 ```
 
 ## 🛠 Develop
 
 ```
-$ bundle exec middleman
+$ middleman server
 ```
 
 ## 🚀 Build
 
 ```
-$ bundle exec middleman build
+$ middleman build
 ```
