@@ -1,26 +1,37 @@
-# Static Site Bootstrap
+# StaticSiteBootstrap
 
-## Require
+![](https://img.shields.io/badge/middleman-4.2.1-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/webpack-3.10.0-blue.svg?style=flat-square)
 
-  * ruby '2.3.0'
-  * node.js '5.9.1'
+静的サイトを作るベースとなるMiddlemanとWebpackのテンプレートです。forkしてnormalizeや普段使うcssフレームワークなどを追加すれば、サクっと土台が作れます✌️
+
+## 🌱 Require
+
+- ruby
+- nodejs
+
+## 📛 Version
+
+- middleman(4.2.1)
+- webpack(3.10.0)
 
 Other dependencies are look at Gemfile and package.json.
 
-## Initialize
+## ⚡ Initialize
 
 ```
-$ bundle install
-$ npm install --save-dev
+$ mkdir YOUR_SITE_NAME && cd $_
+$ gem i middleman -v 4.2.1
+$ middleman init -T t4traw/static_site_bootstrap
 ```
 
-## Develop
+## 🛠 Develop
 
 ```
 $ bundle exec middleman
 ```
 
-## Build
+## 🚀 Build
 
 ```
 $ bundle exec middleman build
