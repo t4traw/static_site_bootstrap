@@ -10,11 +10,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(sass|scss)$/,
+        test: /\.(css|sass|scss)$/,
         use: [
           "style-loader",
           "css-loader",
-          "postcss-loader",
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: [
+                require('autoprefixer')({
+                  grid: true
+                }),
+                require('csswring')(),
+              ]
+            },
+          },
           "sass-loader"
         ]
       },
