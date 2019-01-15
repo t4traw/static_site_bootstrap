@@ -12,7 +12,7 @@
 
 ## 📛 Version
 
-- middleman(4.2.1)
+- middleman(4.3.1)
 - webpack(4.17.1)
 
 Other dependencies are look at Gemfile and package.json.
