@@ -28,7 +28,11 @@ module.exports = {
           },
           "sass-loader"
         ]
-      },
+      }, {
+        test: /\.(js|sass|scss)$/,
+        enforce: "pre",
+        loader: 'import-glob-loader'
+      }
     ]
   }
 };
