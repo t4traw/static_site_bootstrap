@@ -17,6 +17,13 @@
 
 Other dependencies are look at Gemfile and package.json.
 
+### Library update
+
+```
+$ bundle update
+$ yarn upgrade-interactive
+```
+
 ## ⚡ Initialize
 
 ```
@@ -38,3 +45,5 @@ $ middleman server
 ```
 $ middleman build
 ```
+
+## 
