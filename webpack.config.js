@@ -1,7 +1,11 @@
-const webpack = require('webpack');
+const path = require('path')
+const glob = require('glob')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+
 module.exports = {
   entry: [
-    './source/javascripts/site.js'
+    './source/javascripts/_site.js'
   ],
   output: {
     path: __dirname + '/.tmp/dist',
@@ -12,7 +16,7 @@ module.exports = {
       {
         test: /\.(css|sass|scss)$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: 'postcss-loader',
@@ -23,16 +27,29 @@ module.exports = {
                   grid: true
                 }),
                 require('csswring')(),
+                require('cssnano')({
+                  preset: 'default',
+                }),
+
               ]
             },
           },
-          "sass-loader"
+          'sass-loader',
         ]
-      }, {
+      },
+      {
         test: /\.(js|sass|scss)$/,
         enforce: "pre",
         loader: 'import-glob-loader'
-      }
+      },
     ]
-  }
-};
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${path.join(__dirname, 'source')}/**/*`, { nodir: true }),
+    }),
+  ]
+}
