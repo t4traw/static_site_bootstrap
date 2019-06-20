@@ -5,7 +5,7 @@ const PurgecssPlugin = require('purgecss-webpack-plugin')
 
 module.exports = {
   entry: [
-    './source/javascripts/_site.js'
+    './source/javascripts/site.js'
   ],
   output: {
     path: __dirname + '/.tmp/dist',
